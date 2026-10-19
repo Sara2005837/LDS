@@ -21,7 +21,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8888/stock/${encodeURIComponent(symbol)}${type}`,
+        `http://127.0.0.1:8889/stock/${encodeURIComponent(symbol)}${type}`,
       )
       const data = await response.json()
 
@@ -36,7 +36,7 @@ function App() {
     } catch (error) {
       setMessages((previous) => [
         ...previous,
-        `Error: ${error instanceof Error ? error.message : 'Could not connect to the backend. Make sure your FastAPI server is running on port 8888.'}`,
+        `Error: ${error instanceof Error ? error.message : 'Could not connect to the backend. Make sure your FastAPI server is running on port 8889.'}`,
       ])
     } finally {
       setLoading(false)
